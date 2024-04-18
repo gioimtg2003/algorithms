@@ -44,12 +44,19 @@ var LinkedList = /** @class */ (function () {
         }
         return nodes;
     };
+    LinkedList.prototype.deleteHead = function () {
+        if (this.head) {
+            if (this.head.next) {
+                this.head = this.head.next;
+            }
+            else {
+                this.head = null;
+                this.tail = null;
+            }
+        }
+    };
     LinkedList.prototype.toString = function () {
-        console.log(this.toArray()
-            .map(function (node) {
-            console.log(node.value);
-        })
-            .toString());
+        console.log(this.toArray().map(function (node) { return node.value; }));
     };
     return LinkedList;
 }());
@@ -58,4 +65,7 @@ list.append("hello");
 list.append("hello2");
 list.append("hello3");
 list.append("hello4");
+list.append("hello4");
+list.toString();
+list.deleteHead();
 list.toString();
