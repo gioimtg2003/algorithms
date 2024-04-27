@@ -13,7 +13,7 @@ function primeSummation(n: number) {
     let i = 2;
     let s = 0;
     while (i < n) {
-        if (isPrime(i)) {
+        if (_isPrime(i)) {
             s += i;
         }
         i++;
@@ -21,7 +21,7 @@ function primeSummation(n: number) {
     return s;
 }
 
-function isPrime(n: number) {
+function _isPrime(n: number) {
     for (let i = 2; i <= Math.sqrt(n); i++) {
         if (n % i === 0) {
             return false;
@@ -31,4 +31,4 @@ function isPrime(n: number) {
 }
 
 console.log(primeSummation(2000000));
-console.log(isPrime(4));
+console.log(_isPrime(4));
